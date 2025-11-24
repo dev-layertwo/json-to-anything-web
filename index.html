@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JSON Converter - Professional Data Transformation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+  <div class="container">
+    <div class="top-bar">
+      <div class="brand">
+        <h1>JSON Converter</h1>
+        <span class="beta">Pro</span>
+      </div>
+      <div class="settings-bar">
+        <div class="setting-group">
+          <span class="setting-label">Theme</span>
+          <select id="themeSelector" class="select-minimal">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="nord">Nord</option>
+            <option value="monokai">Monokai</option>
+            <option value="solarized">Solarized</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <span class="setting-label">Font</span>
+          <select id="fontSelector" class="select-minimal">
+            <option value="Figtree">Figtree</option>
+            <option value="Inter">Inter</option>
+            <option value="JetBrains Mono">JetBrains Mono</option>
+            <option value="system-ui">System Default</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="tagline">
+      <p>Transform JSON to 25+ formats instantly - zero dependencies</p>
+      <div class="features">
+        <span>⚡ Blazing Fast</span>
+        <span>🔒 Privacy First</span>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Input</div>
+            <div class="panel-subtitle">Paste or type your JSON data</div>
+          </div>
+        </div>
+        <textarea id="input" placeholder='{"name": "Alice", "age": 30, "role": "Engineer"}'></textarea>
+        <div class="controls">
+          <button id="pretty" class="btn-secondary">Prettify</button>
+          <button id="minify" class="btn-secondary">Minify</button>
+          <button id="clear" class="btn-secondary">Clear</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Output</div>
+            <div class="panel-subtitle">Converted result appears here</div>
+          </div>
+        </div>
+        <textarea id="output" readonly placeholder="Select a format and click Convert..."></textarea>
+        <div class="controls">
+          <div class="format-selector">
+            <select id="format">
+              <option value="toYAML">YAML</option>
+              <option value="toCSV">CSV</option>
+              <option value="toTypeScript">TypeScript Interface</option>
+              <option value="toJS">JavaScript</option>
+              <option value="toSchemaSummary">Schema Summary</option>
+              <option value="toHTMLTable">HTML Table</option>
+              <option value="toQuery">Query Params</option>
+              <option value="toFormURLEncoded">Form URLEncoded</option>
+              <option value="toProperties">.properties</option>
+              <option value="toMarkdownTable">Markdown Table</option>
+              <option value="toPlantUML">PlantUML</option>
+              <option value="toMermaid">Mermaid</option>
+              <option value="toSQLiteInsert">SQLite</option>
+              <option value="toMySQLInsert">MySQL</option>
+              <option value="toPostgresInsert">PostgreSQL</option>
+              <option value="toBashExport">Bash</option>
+              <option value="toCSharp">C#</option>
+              <option value="toJava">Java</option>
+              <option value="toPythonDataclass">Python</option>
+              <option value="toGoStruct">Go</option>
+              <option value="toRustStruct">Rust</option>
+              <option value="toDartClass">Dart</option>
+              <option value="toPHPArray">PHP</option>
+              <option value="toProto">Protobuf</option>
+            </select>
+            <button id="convert" class="btn-primary">Convert</button>
+          </div>
+          <button id="copy" class="btn-secondary">Copy</button>
+          <button id="download" class="btn-secondary">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-main">
+        <div class="footer-col footer-col-products">
+          <div class="footer-block-title">Packages</div>
+          <div class="footer-block-links">
+            <a href="https://www.npmjs.com/package/json-anything-endproduct" target="_blank" rel="noopener"
+              class="footer-link-npm">npm: json-anything-endproduct</a>
+            <span class="footer-dot">•</span>
+            <a href="https://pypi.org/project/json_to_anything/" target="_blank" rel="noopener"
+              class="footer-link-pypi">PyPI: json_to_anything</a>
+          </div>
+
+        </div>
+        <div class="footer-col footer-col-stats">
+          <div class="footer-block-title">Stats</div>
+          <div class="footer-block-links stats">
+            <span>25+ Formats Supported</span>
+            <span>100% Client-Side</span>
+            <span>Open Source</span>
+          </div>
+        </div>
+        <div class="footer-col footer-col-links">
+          <div class="footer-block-title">Links</div>
+          <div class="footer-block-links">
+            <a href="https://github.com/dev-layertwo/json-anything-js/blob/main/README.md">Documentation</a>
+            <a href="https://github.com/dev-layertwo/json-anything-js">GitHub</a>
+            <a href="https://github.com/dev-layertwo/json-anything-js">Report Issue</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-built">Built with precision • No tracking • No servers</span>
+        <span class="footer-powered">Powered by <span class="footer-layertwo">LAYERTWO</span></span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module">
+    import * as API from './scripts/index.js';
+
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    const format = document.getElementById('format');
+    const themeSelector = document.getElementById('themeSelector');
+    const fontSelector = document.getElementById('fontSelector');
+
+    // Load saved preferences
+    const savedTheme = localStorage.getItem('theme') || 'monokai';
+    const savedFont = localStorage.getItem('font') || 'Figtree';
+    document.body.setAttribute('data-theme', savedTheme);
+    document.body.style.setProperty('--font-family', savedFont);
+    themeSelector.value = savedTheme;
+    fontSelector.value = savedFont;
+
+    // Theme switching
+    themeSelector.addEventListener('change', (e) => {
+      const theme = e.target.value;
+      document.body.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+
+    // Font switching
+    fontSelector.addEventListener('change', (e) => {
+      const font = e.target.value;
+      document.body.style.setProperty('--font-family', font);
+      localStorage.setItem('font', font);
+    });
+
+    document.getElementById('pretty').addEventListener('click', () => {
+      try {
+        input.value = JSON.stringify(JSON.parse(input.value), null, 2);
+      } catch (e) {
+        alert('Invalid JSON');
+      }
+    });
+
+    document.getElementById('minify').addEventListener('click', () => {
+      try {
+        input.value = JSON.stringify(JSON.parse(input.value));
+      } catch (e) {
+        alert('Invalid JSON');
+      }
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+      input.value = '';
+      output.value = '';
+    });
+
+    document.getElementById('convert').addEventListener('click', () => {
+      let data;
+      try {
+        data = JSON.parse(input.value);
+      } catch (e) {
+        alert('Invalid JSON');
+        return;
+      }
+      const fn = format.value;
+      if (typeof API[fn] !== 'function') {
+        output.value = 'Converter not available';
+        return;
+      }
+      try {
+        const res = API[fn](data);
+        output.value = typeof res === 'string' ? res : JSON.stringify(res, null, 2);
+      } catch (e) {
+        output.value = 'Error: ' + e.message;
+      }
+    });
+
+    document.getElementById('copy').addEventListener('click', () => {
+      navigator.clipboard.writeText(output.value);
+      const btn = document.getElementById('copy');
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = originalText, 2000);
+    });
+
+    function getDownloadInfo(formatValue) {
+      // map converter key -> { ext, mime }
+      const map = {
+        toCSV: { ext: 'csv', mime: 'text/csv;charset=utf-8' },
+        toYAML: { ext: 'yaml', mime: 'text/yaml;charset=utf-8' },
+        toMarkdownTable: { ext: 'md', mime: 'text/markdown;charset=utf-8' },
+        toHTMLTable: { ext: 'html', mime: 'text/html;charset=utf-8' },
+        toTypeScript: { ext: 'ts', mime: 'application/typescript;charset=utf-8' },
+        toJS: { ext: 'js', mime: 'application/javascript;charset=utf-8' },
+        toSchemaSummary: { ext: 'txt', mime: 'text/plain;charset=utf-8' },
+        toPythonDataclass: { ext: 'py', mime: 'text/x-python;charset=utf-8' },
+        toBashExport: { ext: 'sh', mime: 'text/x-shellscript;charset=utf-8' },
+        toSQLiteInsert: { ext: 'sql', mime: 'text/sql;charset=utf-8' },
+        toMySQLInsert: { ext: 'sql', mime: 'text/sql;charset=utf-8' },
+        toPostgresInsert: { ext: 'sql', mime: 'text/sql;charset=utf-8' },
+        toProperties: { ext: 'properties', mime: 'text/plain;charset=utf-8' },
+        toProto: { ext: 'proto', mime: 'text/plain;charset=utf-8' }
+      };
+      return map[formatValue] || { ext: 'txt', mime: 'text/plain;charset=utf-8' };
+    }
+
+    document.getElementById('download').addEventListener('click', () => {
+      const fmt = format.value;
+      const info = getDownloadInfo(fmt);
+      const filename = 'output.' + info.ext;
+      const blob = new Blob([output.value], { type: info.mime });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    });
+  </script>
+</body>
+
+</html>
